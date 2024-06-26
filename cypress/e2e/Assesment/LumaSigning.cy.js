@@ -24,10 +24,9 @@ describe('example to-do app', () => {
           cy.get('#pass').type('Poonam@123')
           
           cy.get('.action.login.primary').click();
-        //   cy.get('.message-error > div').invoke('text').then((actResult)=>{
-        //       expect(actResult).eq('There is already an account with this email address. If you are sure that it is your email address, click here to get your password and access your account.')
+        cy.get('.message-error > div').invoke('text').then((actResult)=>{
+            expect(actResult).eq('There is already an account with this email address. If you are sure that it is your email address, click here to get your password and access your account.')
           })
           
-    
-
-  })
+        })
+      })
