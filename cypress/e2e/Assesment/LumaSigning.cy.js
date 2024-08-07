@@ -21,6 +21,7 @@ describe('Create New Account and signing that account', () => {
       cy.get('#email').type('poonamamale06@gmail.com')
       cy.get('#pass').type('Poonam@123')
      cy.get('.action.login.primary').click();
+     
     
         })
       })
