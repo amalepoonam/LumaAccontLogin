@@ -11,5 +11,12 @@ describe('Customized command',function(){
             
         // })
         cy.selectProduct('Nokia Edge')
+        cy.selectProduct('Blackberry')
+        cy.selectProduct("iphone X")
     })
 })
+// if ($el.text().trim() === product) {
+//     cy.wrap($el).closest(this.locator.productTileSection).within(() => {
+//     cy.get(this.locator.prodName).focus();
+//     cy.get(this.locator.prodName, {timeout : 10000}).click({ force: true });
+// });

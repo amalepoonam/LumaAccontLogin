@@ -12,16 +12,18 @@ describe('Page object frame work ',()=>{
     })
 
     it('Validate the functonality of the page', function(){
-        cy.visit('https://rahulshettyacademy.com/angularpractice/');
+        // cy.visit('https://rahulshettyacademy.com/angularpractice/');
+        cy.visit(Cypress.env('url'))
         const homePage= new HomePage()
         const productPage=new ProductPage()
         homePage.getEditBox().type(data.name)
         homePage.getTwoWayBindining().should('have.value',data.name)
-        homePage.getGender().select(data.gender)/
+        homePage.getGender().select(data.gender)
         homePage.getEntreprenure().should('be.disabled')
         homePage.getShopTab().click();
         data.productName.forEach(function(products){
             cy.selectProduct(products)
+          
             
          })
       productPage.getCheckOut().click()
@@ -31,7 +33,7 @@ describe('Page object frame work ',()=>{
      
       productPage.getCheckBoxButton().click({force:true});
       productPage.getPurchaseProduct().click();
-//       productPage.getSuccessmessage().invoke('class').then((actResult)=>{
+//       productPage.getSuccessmessage().invoke('text').then((actResult)=>{
 //    expect(actResult).eq( 'Thank you! Your order will be delivered in next few weeks :-)')
 //       })
 // productPage.getSuccessmessage().should('have.text','Success!Thank you! Your order will be delivered in next few weeks :-)')
