@@ -1,0 +1,14 @@
+{
+    "logo":".theLogo",
+    "searchBox":"input[name='searchstring']",
+    "searchBoxIcon":"[valign='middle'] > a",
+    "basketIcon":".pfCurrentItems:nth-child(1)",
+    "emptyCartMessage":"h3",
+    "emailAddress":"input[name='login']",
+    "password":"input[name='password']",
+    "signIn":".loginButton",
+    "menSection":"#menu-3-top",
+    "denims":"#menu-3-1"
+
+    
+}

@@ -10,20 +10,22 @@ describe("Validate the functionality of inside store", () => {
         cy.get("input[name='searchstring']").should('exist')
         //searchstring169475736
         cy.get("input[name='searchstring']").should('have.attr', 'placeholder', 'Search the site . . .');
+        //searh icon
         cy.get('[valign="middle"] > a').should('exist')
         // cy.get('#menu451000453').should('be.visible');
+        // 
         cy.get('.pfCurrentItems:nth-child(1)').should('be.visible')
         cy.get(".pfCurrentItems:nth-child(1)").invoke("text").then((itemCount) => {
-              expect(itemCount).eq("0");
+            expect(itemCount).eq("0");
 
         })
-               // validate the text when cart is empty
+        // validate the text when cart is empty
 
         cy.get('h3').should('contain.text', 'Your Cart is Empty');
 
     })
-    it("Login the user inside store",()=>{
-   
+    it("Login the user inside store", () => {
+
         cy.get('a').contains('sign in ').click();
         cy.get('input[name="login"]').type('test@yopmail.com')
         cy.get('input[name="password"]').type('test@123')
@@ -33,21 +35,21 @@ describe("Validate the functionality of inside store", () => {
         // continue to shopping
         cy.get('a').contains('Continue Shopping').click();
         // cy.get('#menu-2-top').invoke('show')
-        cy.get('#menu-3-top').trigger('mouseover').then(()=>{
-    //   cy.contains("a","denim").click({force:true});
-    cy.get('#menu-3-1').click();
+        cy.get('#menu-3-top').trigger('mouseover').then(() => {
+            //   cy.contains("a","denim").click({force:true});
+            cy.get('#menu-3-1').click();
 
-           
+
         });
-       
-      cy.get('a').contains('Catch Straight Leg Jean').click()
-      cy.get('.prodPrice').should('be.visible') // Ensure the price is visible
-          .and('contain', '$159.00')
-          // add the quqntity
-          cy.get("input[name='quantity']").clear().type('2');
-          // Add to basket 
-          cy.get('b > img').click();
-          //continue shopping 
+
+        cy.get('a').contains('Catch Straight Leg Jean').click()
+        cy.get('.prodPrice').should('be.visible') // Ensure the price is visible
+            .and('contain', '$159.00')
+        // add the quqntity
+        cy.get("input[name='quantity']").clear().type('2');
+        // Add to basket 
+        cy.get('b > img').click();
+        //continue shopping 
         //   cy.get('b').contains('CONTINUE SHOPPING').click();
         //  cy.get('#cartLinkContinueShopping').click()
         cy.get('#cartLinkCheckOut').click();
@@ -71,18 +73,18 @@ describe("Validate the functionality of inside store", () => {
         cy.get("input[name='exdate1']").type('12');
         cy.get("input[name='exdate2']").type('74')
         cy.get("input[name='cvvNum']").type('744')
-       // cy.get(" input[name='shoppingbasketportletid']").click({force:true})
-       cy.get('#cartLinkCheckOut > b > img').click();
-       cy.get('#cartCellTop').then((element)=>{
-        const actualText=element.text();
-        expect(actualText.includes("Thank you for shopping with us")).to.be.true
-    
-    })
-      
+        // cy.get(" input[name='shoppingbasketportletid']").click({force:true})
+        cy.get('#cartLinkCheckOut > b > img').click();
+        cy.get('#cartCellTop').then((element) => {
+            const actualText = element.text();
+            expect(actualText.includes("Thank you for shopping with us")).to.be.true
+
+        })
 
 
-        
-      
+
+
+
 
 
 
