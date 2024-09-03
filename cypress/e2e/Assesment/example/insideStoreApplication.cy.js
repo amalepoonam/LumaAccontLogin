@@ -9,6 +9,7 @@ describe('Validate the Inside store application end to end functionality',()=>{
         const productPage=new productCategoryPage();
         productPage.verifyLogoVisibility();
         
+        
 
     })
 })

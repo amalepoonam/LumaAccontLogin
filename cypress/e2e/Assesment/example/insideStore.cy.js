@@ -67,6 +67,8 @@ describe("Validate the functionality of inside store", () => {
         cy.get("input[name='promocode']").type('SAVe345')
         cy.get("img[src='http://training.inside.tm/www/1199/files/2014-button-apply-code.png']").click();
         cy.get('#PFPopUp_button').click()
+        
+        // credit card details
         cy.get("input[name='creditCardName']").type('xyz')
         cy.get("select[name='creditCardtype']").select('Visa')
         cy.get("input[name='creditCard1']").type('41111111111111111')

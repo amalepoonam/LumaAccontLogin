@@ -8,7 +8,8 @@
     "password":"input[name='password']",
     "signIn":".loginButton",
     "menSection":"#menu-3-top",
-    "denims":"#menu-3-1"
+    "denims":"#menu-3-1",
+    "addToBasket":""
 
     
 }
