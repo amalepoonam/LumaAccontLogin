@@ -16,10 +16,13 @@ describe("Google Map",()=>{
             cy.title().should('contain','Wankhede Stadium');
          })
          //rating points
-         const rating ='4.5';
+         const ratingPoints ='4.5';
+         const numOfRating='37,928'
+
         
-         cy.get("div[class='fontDisplayLarge']").should('contain','4.5')
-         cy.log(rating);
-         cy.get('.HHrUdb').should('contain','37,928')
+         cy.get("div[class='fontDisplayLarge']").should('contain',ratingPoints)
+         cy.log(ratingPoints);
+         cy.get('.HHrUdb').should('contain',numOfRating);
+         cy.log(numOfRating);
     })
 })
