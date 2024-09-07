@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-09-07T11:25:08.167Z",
+    "end": "2024-09-07T11:25:28.576Z",
+    "duration": 20409,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "289d15b1-bc73-41db-b7c0-665808946579",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Assesment\\practice\\GoogleMap.cy.js",
+      "file": "cypress\\e2e\\Assesment\\practice\\GoogleMap.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b3a686fa-dc39-424c-a262-a8378543d10f",
+          "title": "Google Map",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verify Location",
+              "fullTitle": "Google Map verify Location",
+              "timedOut": null,
+              "duration": 14649,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\practice\\\\GoogleMap.cy.js\\\\Google Map -- verify Location.png\"\n    ]\n  ]\n}",
+              "code": "cy.visit('https://www.google.com/maps/');\ncy.get('#searchboxinput').type(\"Wankhede Stadium\");\ncy.get('#cell0x0').click();\ncy.get('.DUwDvf').then(ele => {\n  const actText = ele.text();\n  expect(actText.includes(\"Wankhede Stadium\")).to.be.true;\n  cy.screenshot(); // screenshot is stored in screen shot folder\n  cy.log(\"saved the screenshot succesfully\");\n  cy.title().should('contain', 'Wankhede Stadium');\n});\n//rating points\n//  const ratingPoints ='4.5';\n//  const numOfRating='37,928';\n//  cy.get(\"div[class='fontDisplayLarge']\").should('contain',ratingPoints)\n//  cy.log(ratingPoints);\n//  cy.get('.HHrUdb').should('contain',numOfRating);\n//  cy.log(numOfRating);\ncy.get(\"div[class='fontDisplayLarge']\").then($rating => {\n  const rating = $rating.text().trim();\n  cy.log('Rating: ' + rating);\n  cy.get('.HHrUdb').then($reviews => {\n    const reviews = $reviews.text().trim();\n    cy.log('Number of Reviews: ' + reviews);\n    console.log('Rating: ' + rating);\n    console.log('Number of Reviews: ' + reviews);\n  });\n});",
+              "err": {},
+              "uuid": "627be892-f096-43c7-b15c-02b47484ce1a",
+              "parentUUID": "b3a686fa-dc39-424c-a262-a8378543d10f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "627be892-f096-43c7-b15c-02b47484ce1a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14649,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
